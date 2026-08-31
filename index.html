@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>서버 안내원 개인정보처리방침 | Server Guide Bot Privacy Policy</title>
+  <meta name="description" content="서버 안내원 Discord 봇의 개인정보처리방침">
+  <style>
+    :root { color-scheme: light dark; --max: 880px; }
+    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.72; margin: 0; }
+    main { max-width: var(--max); margin: 0 auto; padding: 40px 20px 72px; }
+    h1 { line-height: 1.25; margin-bottom: 8px; }
+    h2 { margin-top: 38px; border-bottom: 1px solid #8885; padding-bottom: 8px; }
+    h3 { margin-top: 26px; }
+    .meta, .note { opacity: .78; }
+    .box { border: 1px solid #8886; border-radius: 12px; padding: 14px 16px; }
+    code { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    a { overflow-wrap: anywhere; }
+    ul { padding-left: 22px; }
+    hr { margin: 52px 0; border: 0; border-top: 1px solid #8886; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>서버 안내원 개인정보처리방침</h1>
+  <p class="meta"><strong>시행일:</strong> 2026년 8월 31일</p>
+
+  <div class="box">
+    <strong>요약</strong>
+    <p>서버 안내원은 Discord 커뮤니티 서버의 안내와 운영을 보조하는 봇입니다. 지정된 AI 안내 채널에서 사용자가 작성한 질문을 읽어 서버 관리자가 등록한 FAQ 중 적절한 답변을 선택하고, 신규 멤버 입장 안내 및 퇴장 로그 기능을 제공합니다.</p>
+  </div>
+
+  <h2>1. 처리하는 정보</h2>
+  <p>서버 안내원은 기능 제공에 필요한 범위에서 다음 정보를 처리할 수 있습니다.</p>
+  <ul>
+    <li><strong>Discord 식별자:</strong> 서버(Guild) ID, 사용자 ID, 채널 ID, 역할 ID</li>
+    <li><strong>서버 운영 설정:</strong> FAQ, 안내 채널 설정, 관리자 역할 설정, 입장 안내 설정, AI 사용량 설정 등</li>
+    <li><strong>사용량 정보:</strong> 사용자별 일일 AI 질문 사용 횟수와 기준 날짜</li>
+    <li><strong>메시지 콘텐츠:</strong> 서버 관리자가 지정한 AI 안내 채널에서 사용자가 작성한 질문 메시지</li>
+    <li><strong>멤버 이벤트 정보:</strong> 신규 가입 및 탈퇴 이벤트 처리에 필요한 Discord 멤버 정보. 이 정보는 입장 안내 및 퇴장 로그를 생성하기 위해 처리됩니다.</li>
+  </ul>
+
+  <h2>2. 정보 이용 목적</h2>
+  <ul>
+    <li>사용자 질문을 서버 관리자가 등록한 FAQ에 분류하여 안내하기 위해</li>
+    <li>적절한 FAQ가 없는 질문을 서버 운영진에게 전달하기 위해</li>
+    <li>서버별 AI 질문 사용량 제한을 적용하기 위해</li>
+    <li>신규 멤버 입장 안내 및 멤버 탈퇴 로그를 제공하기 위해</li>
+    <li>서버 관리자가 봇의 설정과 권한을 관리할 수 있도록 하기 위해</li>
+  </ul>
+
+  <h2>3. Message Content Intent 사용</h2>
+  <p>서버 안내원은 서버 관리자가 지정한 AI 안내 채널에서 일반 메시지로 작성된 자연어 질문을 처리하기 위해 Discord의 <strong>Message Content Intent</strong>를 사용합니다.</p>
+  <p>봇은 해당 질문의 의미를 분석하여 미리 등록된 FAQ 중 적절한 답변을 선택합니다. 서버 안내원 자체 데이터베이스에는 사용자의 질문 원문을 일반적인 운영 데이터로 영구 저장하지 않습니다.</p>
+  <p class="note">단, 질문 내용은 아래 제3자 AI 서비스에 전송되어 처리될 수 있습니다.</p>
+
+  <h2>4. Server Members Intent 사용</h2>
+  <p>서버 안내원은 <strong>Server Members Intent</strong>를 사용하여 멤버 가입 및 탈퇴 이벤트를 처리합니다. 신규 가입 시 관리자가 설정한 입장 안내를 전송하고, 탈퇴 시 지정된 운영 로그 채널에 퇴장 기록을 전송합니다.</p>
+  <p>이 Intent를 전체 멤버 목록 수집, Presence 추적 또는 광고 목적으로 사용하지 않습니다.</p>
+
+  <h2>5. 제3자 서비스 및 외부 처리</h2>
+  <h3>Google Gemini API</h3>
+  <p>AI 안내 기능을 사용할 때 질문 메시지와 FAQ 분류에 필요한 문맥이 Google Gemini API로 전송될 수 있습니다.</p>
+  <p>Google의 데이터 사용 방식은 사용 중인 Gemini API 요금제와 설정에 따라 달라질 수 있습니다. Google은 무료(Unpaid/Free) 서비스에서 제출된 콘텐츠와 생성된 응답을 제품 및 머신러닝 기술의 개선에 사용할 수 있다고 명시하고 있으며, 유료(Paid) 서비스에서는 프롬프트와 응답을 제품 개선에 사용하지 않는다고 설명하고 있습니다.</p>
+  <p>자세한 내용은 Google의 Gemini API 약관 및 데이터 처리 문서를 확인해 주세요.</p>
+
+  <h3>MongoDB Atlas 및 호스팅 저장소</h3>
+  <p>서버 설정, FAQ, 사용자별 질문 사용량 등 운영 데이터는 배포 구성에 따라 MongoDB Atlas 및/또는 봇이 실행되는 호스팅 환경의 저장소에 저장될 수 있습니다.</p>
+
+  <h2>6. 보관 기간</h2>
+  <ul>
+    <li><strong>질문 원문:</strong> 서버 안내원 자체 데이터베이스에는 일반적인 운영 기록으로 영구 저장하지 않습니다.</li>
+    <li><strong>사용량 기록:</strong> 일일 질문 제한을 제공하기 위해 사용자 ID, 사용 횟수 및 날짜가 저장될 수 있으며, 삭제 요청 또는 서비스 운영상 더 이상 필요하지 않을 때 삭제할 수 있습니다.</li>
+    <li><strong>서버 설정 및 FAQ:</strong> 해당 서버에서 기능을 제공하는 동안 또는 서버 관리자가 삭제할 때까지 보관될 수 있습니다.</li>
+    <li><strong>Google Gemini API로 전송된 데이터:</strong> Google의 해당 서비스 약관, 데이터 처리 정책, 요금제 및 로깅 설정에 따른 보관 정책이 적용됩니다.</li>
+  </ul>
+
+  <h2>7. 사용자의 선택 및 데이터 삭제 요청</h2>
+  <p>사용자는 AI 안내 기능을 이용하지 않음으로써 질문 메시지가 AI 분류 기능에 제공되지 않도록 할 수 있습니다. 현재 봇은 지정된 AI 안내 채널에서 작성된 일반 메시지를 자동 처리할 수 있으므로, 해당 기능을 이용하지 않으려면 AI 안내 채널에 질문을 작성하지 마세요.</p>
+  <p>봇이 저장한 사용자별 운영 데이터의 삭제를 원하는 경우, <strong>서버 안내원이 설치된 Discord 서버의 관리자에게 삭제 요청을 전달</strong>해 주세요. 요청 시 정확한 처리를 위해 Discord 사용자 ID와 해당 서버 ID를 함께 제공해 주세요. 서버 관리자는 봇 운영자에게 요청을 전달하여 저장된 사용자별 사용량 데이터를 삭제하도록 요청할 수 있습니다.</p>
+  <p class="note">민감한 개인정보나 메시지 원문을 삭제 요청 내용에 포함하지 마세요.</p>
+
+  <h2>8. 데이터 보호</h2>
+  <p>봇 운영자는 서비스 운영에 필요한 최소한의 정보만 처리하고, 외부 서비스와의 통신에는 암호화된 HTTPS/TLS 연결을 사용합니다. 저장 데이터의 구체적인 보호 방식은 사용 중인 데이터베이스 및 호스팅 환경의 보안 설정에도 따릅니다.</p>
+
+  <h2>9. 아동 및 민감정보</h2>
+  <p>사용자는 AI 안내 채널에 비밀번호, 인증 코드, 금융정보, 건강정보 또는 기타 민감하거나 기밀인 정보를 입력하지 않아야 합니다. 서버 안내원은 이러한 정보를 수집할 목적으로 설계되지 않았습니다.</p>
+
+  <h2>10. 정책 변경</h2>
+  <p>기능, 외부 서비스 또는 데이터 처리 방식이 변경되면 본 정책이 업데이트될 수 있습니다. 중요한 변경이 있는 경우 시행일을 갱신합니다.</p>
+
+  <h2>11. 문의</h2>
+  <p>개인정보 처리 또는 데이터 삭제와 관련된 문의는 서버 안내원이 설치된 Discord 서버의 관리자에게 전달해 주세요.</p>
+
+  <hr>
+
+  <h1>Server Guide Bot Privacy Policy</h1>
+  <p class="meta"><strong>Effective date:</strong> August 31, 2026</p>
+
+  <h2>1. Data We Process</h2>
+  <p>Server Guide Bot may process Discord guild IDs, user IDs, channel IDs, role IDs, server configuration, FAQs, per-user daily AI usage counters, message content posted in administrator-designated AI help channels, and member join/leave event information required for welcome and leave-log features.</p>
+
+  <h2>2. Purposes</h2>
+  <p>The data is used to classify user questions against administrator-provided FAQs, return the appropriate guidance, escalate unmatched questions to staff, enforce per-user usage limits, send welcome messages, generate leave logs, and provide server-specific administration features.</p>
+
+  <h2>3. Message Content</h2>
+  <p>The bot uses Discord's Message Content Intent in administrator-designated AI help channels. The bot processes ordinary natural-language messages in those channels to choose an appropriate pre-registered FAQ response. The bot does not normally persist the original user question as a permanent record in its own operational database.</p>
+
+  <h2>4. Guild Members</h2>
+  <p>The Guild Members intent is used for member join and leave events so the bot can send configured welcome messages and operational leave logs. It is not used to track presence, build advertising profiles, or collect a full member list for unrelated purposes.</p>
+
+  <h2>5. Third-Party Processing</h2>
+  <p>User questions may be sent to the Google Gemini API for AI classification and, where applicable, translation. Google's treatment of submitted content depends on the applicable Gemini API plan and settings. Google states that content submitted through unpaid/free services may be used to improve products and machine-learning technologies, while prompts and responses submitted through paid services are not used to improve Google's products.</p>
+  <p>Operational data may also be stored using MongoDB Atlas and/or storage provided by the bot's hosting environment, depending on deployment configuration.</p>
+
+  <h2>6. Retention</h2>
+  <p>The bot does not normally store original AI-channel questions permanently in its own database. Per-user usage records and server configuration may be retained while required to operate the service or until deletion is requested. Data sent to Google Gemini API is subject to Google's applicable terms, retention policies, plan, and logging settings.</p>
+
+  <h2>7. User Choice and Deletion</h2>
+  <p>Users who do not wish to provide message content to the AI classification feature should not submit questions in the designated AI help channel. To request deletion of operational data stored by the bot, contact an administrator of the Discord server where Server Guide Bot is installed and provide your Discord User ID and the relevant Guild ID. The administrator can forward the request to the bot operator for deletion of the user's stored usage record.</p>
+
+  <h2>8. Security</h2>
+  <p>The operator seeks to minimize collected data and uses encrypted HTTPS/TLS connections when communicating with external services. Storage security additionally depends on the security configuration of the database and hosting provider in use.</p>
+
+  <h2>9. Sensitive Information</h2>
+  <p>Do not submit passwords, authentication codes, financial information, health information, or other sensitive/confidential information to the AI help channel. The bot is not designed to collect such information.</p>
+
+  <h2>10. Changes</h2>
+  <p>This policy may be updated when the bot's features, service providers, or data practices change. The effective date will be updated for material revisions.</p>
+
+  <h2>11. Contact</h2>
+  <p>For privacy or deletion requests, contact an administrator of a Discord server where Server Guide Bot is installed.</p>
+</main>
+</body>
+</html>
